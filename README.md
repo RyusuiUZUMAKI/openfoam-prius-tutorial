@@ -181,3 +181,5 @@ MIT License
 本計算結果は教材用であり、現実との一致を保証するものではありません。
 
 GitHubは更新する場合があります。
+
+⭐ Star this repo if it helped you!
