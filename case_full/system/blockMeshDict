@@ -1,0 +1,71 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  10
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Note: this file is a Copy of $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+
+convertToMeters 1;
+
+vertices
+(
+    (-0.2 -0.02 0) //風洞を再現(400mm×700mm)→ 0.7(0.2 0.5) 
+    (0.5 -0.02 0)
+    (0.5 0.02 0)
+    (-0.2 0.02 0)
+    (-0.2 -0.02 0.4)
+    (0.5 -0.02 0.4)
+    (0.5 0.02 0.4)
+    (-0.2 0.02 0.4)
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (140 8 80) simpleGrading (1 1 1)
+);
+
+boundary
+(
+    inlet
+    {
+        type    patch;
+        faces   ((0 4 7 3));
+    }
+    outlet
+    {
+        type    patch;
+        faces   ((1 2 6 5));
+    }
+    y_max
+    {
+        type    patch;
+        faces   ((0 1 5 4));
+    }
+    y_min
+    {
+        type    patch;
+        faces   ((2 3 7 6));
+    }
+    z_max
+    {
+        type    patch;
+        faces   ((4 5 6 7));
+    }
+    z_min
+    {
+        type    patch;
+        faces   ((0 3 2 1));
+    }
+);
+
+// ************************************************************************* //

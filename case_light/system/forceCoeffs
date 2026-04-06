@@ -1,0 +1,32 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+
+forces
+{
+    type            forceCoeffs;
+    libs            ("libforces.so");
+    writeControl    timeStep;
+    writeInterval   200;
+
+    patches         ("cylinder");   // ①円柱のパッチ名
+
+    rho             rhoInf;         // incompressible
+    log             true;
+    rhoInf          1.2;              // redundant for incompressible 1.2kg/m3
+
+    liftDir         (0 0 1);        // ②z方向に揚力
+    dragDir         (1 0 0);        // x方向流れに沿った抗力
+    CofR            (0 0 0.2);      // ⑤円柱中心
+    pitchAxis       (0 1 0);        // これで回転軸y方向（必要なら変更可能）
+    magUInf         1;              // 流速U = 1 m/s
+    lRef            0.04;           // 円柱直径（参考長さ）
+    Aref            0.0016;         // ③円柱投影面積（D*幅=0.04*0.04）
+}
+
+
+// ************************************************************************* //

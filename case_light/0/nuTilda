@@ -1,0 +1,58 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  10
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       volScalarField;
+    object      nuTilda;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -1 0 0 0 0];
+
+internalField uniform 0;
+
+boundaryField
+{
+    inlet
+    {
+        type fixedValue;
+        value uniform 1e-4;   // 小さめでOK
+    }
+
+    outlet
+    {
+        type zeroGradient;
+    }
+
+    y_max
+    {
+        type slip;
+    }
+
+    y_min
+    {
+        type slip;
+    }
+
+    z_max
+    {
+        type slip;
+    }
+
+    z_min
+    {
+        type slip;
+    }
+
+    cylinder
+    {
+        type nutUSpaldingWallFunction; // noSlip 壁に使用
+        value uniform 1e-6;
+    }
+}
