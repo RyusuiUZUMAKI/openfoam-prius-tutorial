@@ -9,7 +9,7 @@
 書籍「Windowsネイティブのための流体数値解析環境構築編」の応用に対応しています。
 
 ## 書籍
-[Windows ネイティブのための流体数値解析-環境構築偏-】【電子版(PDF)】をBoothで購入](https://ryusuiuzumaki.booth.pm/items/8149598)
+[【Windows ネイティブのための流体数値解析-環境構築偏-】【電子版(PDF)】をBoothで購入](https://ryusuiuzumaki.booth.pm/items/8149598)
 
 * 使用ソルバ：foamRun
 * 解析対象：自動車周りの流れ
