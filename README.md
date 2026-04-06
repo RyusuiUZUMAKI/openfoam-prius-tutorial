@@ -182,4 +182,4 @@ MIT License
 
 GitHubは更新する場合があります。
 
-⭐ Star this repo if it helped you!
+⭐ If this repository helped you, please consider giving it a star!
