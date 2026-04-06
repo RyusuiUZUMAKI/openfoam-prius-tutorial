@@ -38,7 +38,7 @@
 ※ case_light は計算時間短縮のため、物理時間（End Time）を 0.1 秒に設定しています。
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/RyusuiUZUMAKI/openfoam-prius-tutorial.git
 cd openfoam-prius-tutorial
 cd case_light
 
